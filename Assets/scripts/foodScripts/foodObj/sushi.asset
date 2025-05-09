@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7487a7d433655b4f95f5305d4fe3e56, type: 3}
+  m_Name: sushi
+  m_EditorClassIdentifier: 
+  foodItemHeight: 0
+  foodName: 
+  cheeseValue: 0
+  meatValue: 0
+  birdMeatValue: 0
+  seafoodValue: 0
+  cakeValue: 0
+  breadValue: 0
+  sauceValue: 0
+  drinkValue: 0
+  desertValue: 0
+  fruitValue: 0
+  vegitableValue: 0
+  starchValue: 0
+  disassembleValue: 0
+  ingredients: 100000000a000000
+  canBeDisassembled: 1

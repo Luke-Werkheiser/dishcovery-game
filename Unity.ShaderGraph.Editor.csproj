@@ -59,7 +59,7 @@
     <UnityVersion>2022.3.54f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\lukew\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.1\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\lukew\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.2\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.54f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.54f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -123,8 +123,8 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Graphs\Matrix4MaterialSlot.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Input\Geometry\InstanceIDNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\Enumerations\PropertyType.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Legacy\SlotReference0.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Math\Vector\DistanceNode.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Legacy\SlotReference0.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Artistic\Normal\NormalReconstructZNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Controls\CubemapControl.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Math\Trigonometry\ArcsineNode.cs" />
@@ -167,13 +167,13 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\UV\TriplanarNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\Data\ConditionalField.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Graphs\ShaderInput.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Blackboard\SGBlackboardCategory.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\Controls.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Views\MaterialGraphView.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\Descriptors\KernelDescriptor.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Input\Lighting\BakedGINode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\Enumerations\NormalDropOffSpace.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Inspector\PropertyDrawers\SampleTexture2DNodePropertyDrawer.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Blackboard\SGBlackboardCategory.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Util\KeywordCollector.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Views\IShaderNodeView.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Interfaces\IGeneratesFunction.cs" />
@@ -273,8 +273,8 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\AssemblyInfo.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Util\AssertHelpers.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Graphs\Matrix3ShaderProperty.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\Targets\CustomRenderTexture\CustomTextureSize.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Graphs\VectorShaderProperty.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\Targets\CustomRenderTexture\CustomTextureSize.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Graphs\GroupData.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Implementation\GraphObject.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Interfaces\ISGViewModel.cs" />
@@ -447,8 +447,8 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Math\Vector\ReflectionNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\Enumerations\ZWrite.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Math\Vector\RefractNode.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Interfaces\IMayRequireTransform.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Legacy\SpriteUnlitMasterNode1.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Interfaces\IMayRequireTransform.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\LegacyUnknownTypeNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Input\PropertyNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Graphs\DynamicValueMaterialSlot.cs" />
@@ -495,8 +495,8 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Graphs\IMaterialSlotHasValue.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Math\Range\ClampNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Util\PooledHashSet.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Colors\ColorManager.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Utility\SubGraphNode.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Colors\ColorManager.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\TargetResources\Structs.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Interfaces\IShaderInputObserver.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Input\Gradient\BlackbodyNode.cs" />
@@ -507,8 +507,8 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\Data\FieldDependency.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\UV\SpherizeNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Math\Range\OneMinusNode.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Blackboard\BlackboardInputInfo.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Util\RGBANodeOutput.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Blackboard\BlackboardInputInfo.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Graphs\UVMaterialSlot.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Input\Basic\IntegerNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\UV\RotateNode.cs" />
@@ -523,8 +523,8 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\Targets\Fullscreen\FullscreenMetaData.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Importers\ShaderGraphMetadata.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Util\FunctionRegistry.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Input\Texture\SampleTexture3DNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Input\Geometry\TangentVectorNode.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Input\Texture\SampleTexture3DNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Input\Matrix\TransformationMatrixNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Graphs\TangentMaterialSlot.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Util\KeywordDependentCollection.cs" />
@@ -571,8 +571,8 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Views\ContextView.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Inspector\PropertyDrawers\MatrixPropertyDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Views\IdentifierField.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Interfaces\Graph\IEdge.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Controls\DielectricSpecularControl.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Interfaces\Graph\IEdge.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Math\Range\MinimumNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\Descriptors\FieldDescriptor.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\Descriptors\StructDescriptor.cs" />
@@ -643,8 +643,8 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\Contexts\TargetFieldContext.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Channel\SplitNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\Enumerations\Platform.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Graphs\MaterialSlot.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Importers\ShaderGraphImporterEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Graphs\MaterialSlot.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Interface\IRequiresData.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\Descriptors\AdditionalCommandDescriptor.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Input\Scene\FogNode.cs" />
@@ -660,8 +660,8 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Interfaces\ISGControlledElement.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Controllers\BlackboardController.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\UV\TilingAndOffsetNode.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\GeometryNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\Targets\BuiltIn\Editor\ShaderGraph\AssetCallbacks\CreateLitShaderGraph.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\GeometryNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Nodes\Math\Matrix\MatrixConstructionNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Controls\ChannelMixerControl.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Interfaces\IMayRequireViewDirection.cs" />
@@ -673,14 +673,14 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Util\PooledList.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Graphs\PositionMaterialSlot.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\Targets\BuiltIn\Editor\ShaderGraph\Targets\BuiltInUnlitSubTarget.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\ShaderGraphProjectSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Legacy\Edge0.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\ShaderGraphProjectSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Serialization\RefDataEnumerable.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\Targets\CustomRenderTexture\CustomTextureSubTarget.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Graphs\PreviewMode.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Inspector\PropertyDrawers\ShaderInputPropertyDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\ViewModels\InspectorViewModel.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Manipulators\Scrollable.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Drawing\Inspector\PropertyDrawers\ShaderInputPropertyDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Graphs\CubemapShaderProperty.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Generation\Enumerations\InstancingOptions.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.11\Editor\Data\Graphs\GraphSetup.cs" />

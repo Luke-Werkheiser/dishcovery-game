@@ -59,7 +59,7 @@
     <UnityVersion>2022.3.54f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\lukew\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.1\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\lukew\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.2\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.54f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.54f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -115,9 +115,9 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\UI\CloseWindowIfOpened.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\Views\Branch\BranchesListView.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\Tool\AuthToken.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\AssetsUtils\GetSelectedPaths.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\Help\TestingHelpData.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\WebApi\IsCollabProjectMigratedResponse.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\Help\TestingHelpData.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\AssetsUtils\GetSelectedPaths.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\Gluon\CheckinProgress.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\Views\CreateWorkspace\DrawCreateWorkspaceView.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\AssetMenu\Dialogs\CheckinDialog.cs" />
@@ -263,8 +263,8 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\Views\IncomingChanges\Developer\IncomingChangesSelection.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\Views\History\SaveAction.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\Developer\CheckinProgress.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\NewIncomingChanges.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\Views\PendingChanges\PendingChangesTreeHeaderState.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\NewIncomingChanges.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\UI\Progress\DrawProgressForOperations.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\Developer\UpdateProgress.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.5.2\Editor\PlasticSCM\UI\Progress\DrawProgressForViews.cs" />

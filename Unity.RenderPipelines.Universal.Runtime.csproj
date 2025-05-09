@@ -59,7 +59,7 @@
     <UnityVersion>2022.3.54f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\lukew\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.1\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\lukew\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.2\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.54f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.54f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -165,8 +165,8 @@
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@14.0.11\Runtime\Tiling\TileRangeExpansionJob.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@14.0.11\Runtime\TemporalAA.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@14.0.11\Runtime\2D\CinemachineUniversalPixelPerfect.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@14.0.11\Runtime\Data\UniversalRenderPipelineAsset.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@14.0.11\Runtime\XR\XRPassUniversal.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@14.0.11\Runtime\Data\UniversalRenderPipelineAsset.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@14.0.11\Runtime\Overrides\PaniniProjection.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@14.0.11\Runtime\Data\PostProcessData.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@14.0.11\Runtime\Debug\DebugDisplaySettingsCommon.cs" />
