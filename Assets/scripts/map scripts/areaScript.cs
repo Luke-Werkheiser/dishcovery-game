@@ -1,137 +1,115 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class areaScript : MonoBehaviour
 {
     public Transform[] spawnPoints;
-    
+
     [Header("Exit Configuration")]
-    public bool hasNorthExit = true;
-    public bool hasSouthExit = true;
-    public bool hasWestExit = true;
-    public bool hasEastExit = true;
+    public bool hasNorthExit = false;
+    public bool hasSouthExit = false;
+    public bool hasWestExit = false;
+    public bool hasEastExit = false;
     
     [Header("Exit Managers")]
-    public clearingExitManager clearingExitUp;    // North
-    public clearingExitManager clearingExitDown;  // South
-    public clearingExitManager clearingExitEast;  // East
-    public clearingExitManager clearingExitWest;  // West
+    public clearingExitManager clearingExitUp;    // North exit
+    public clearingExitManager clearingExitDown;  // South exit
+    public clearingExitManager clearingExitEast;  // East exit
+    public clearingExitManager clearingExitWest;  // West exit
     
-    [Header("Connected Exit Destinations")]
-    public clearingExitManager clearingDestinationUp;    // Where NORTH exit leads to
-    public clearingExitManager clearingDestinationDown;  // Where SOUTH exit leads to
-    public clearingExitManager clearingDestinationEast;  // Where EAST exit leads to
-    public clearingExitManager clearingDestinationWest;  // Where WEST exit leads to
+    [Header("Connected Destinations")]
+    public clearingExitManager clearingDestinationUp;    // Where NORTH exit leads
+    public clearingExitManager clearingDestinationDown;  // Where SOUTH exit leads
+    public clearingExitManager clearingDestinationEast;  // Where EAST exit leads
+    public clearingExitManager clearingDestinationWest;  // Where WEST exit leads
     
     public bool playerIsInThisArea;
-    
-    [Header("Position in Grid")]
     public Vector2Int gridPosition;
 
-    public void ConnectExit(Direction direction, clearingExitManager destinationExit)
+    public void setClearingDestination(clearingExitManager exitManager, clearingExitManager destination)
     {
-        switch (direction)
+        if (exitManager == clearingExitUp)
         {
-            case Direction.North:
-                clearingDestinationUp = destinationExit;
-                if (clearingExitUp != null)
-                {
-                    clearingExitUp.connectedPoint = destinationExit;
-                    hasNorthExit = true;
-                }
-                break;
-                
-            case Direction.South:
-                clearingDestinationDown = destinationExit;
-                if (clearingExitDown != null)
-                {
-                    clearingExitDown.connectedPoint = destinationExit;
-                    hasSouthExit = true;
-                }
-                break;
-                
-            case Direction.East:
-                clearingDestinationEast = destinationExit;
-                if (clearingExitEast != null)
-                {
-                    clearingExitEast.connectedPoint = destinationExit;
-                    hasEastExit = true;
-                }
-                break;
-                
-            case Direction.West:
-                clearingDestinationWest = destinationExit;
-                if (clearingExitWest != null)
-                {
-                    clearingExitWest.connectedPoint = destinationExit;
-                    hasWestExit = true;
-                }
-                break;
+            clearingDestinationUp = destination;
+            clearingExitUp.connectedPoint = destination;
+            hasNorthExit = true;
+        }
+        else if (exitManager == clearingExitDown)
+        {
+            clearingDestinationDown = destination;
+            clearingExitDown.connectedPoint = destination;
+            hasSouthExit = true;
+        }
+        else if (exitManager == clearingExitEast)
+        {
+            clearingDestinationEast = destination;
+            clearingExitEast.connectedPoint = destination;
+            hasEastExit = true;
+        }
+        else if (exitManager == clearingExitWest)
+        {
+            clearingDestinationWest = destination;
+            clearingExitWest.connectedPoint = destination;
+            hasWestExit = true;
         }
     }
-    
-    public void DisableExit(Direction direction)
-    {
-        switch (direction)
-        {
-            case Direction.North:
-                hasNorthExit = false;
-                if (clearingExitUp != null) clearingExitUp.gameObject.SetActive(false);
-                clearingDestinationUp = null;
-                break;
-                
-            case Direction.South:
-                hasSouthExit = false;
-                if (clearingExitDown != null) clearingExitDown.gameObject.SetActive(false);
-                clearingDestinationDown = null;
-                break;
-                
-            case Direction.East:
-                hasEastExit = false;
-                if (clearingExitEast != null) clearingExitEast.gameObject.SetActive(false);
-                clearingDestinationEast = null;
-                break;
-                
-            case Direction.West:
-                hasWestExit = false;
-                if (clearingExitWest != null) clearingExitWest.gameObject.SetActive(false);
-                clearingDestinationWest = null;
-                break;
-        }
-    }
-    
-    // Helper method to get exit manager for a direction
+
     public clearingExitManager GetExitManager(Direction direction)
     {
-        return direction switch
+        switch (direction)
         {
-            Direction.North => clearingExitUp,
-            Direction.South => clearingExitDown,
-            Direction.East => clearingExitEast,
-            Direction.West => clearingExitWest,
-            _ => null
-        };
+            case Direction.North: return clearingExitUp;
+            case Direction.South: return clearingExitDown;
+            case Direction.East: return clearingExitEast;
+            case Direction.West: return clearingExitWest;
+            default: return null;
+        }
     }
-    
-    // Helper method to get destination for a direction
-    public clearingExitManager GetDestination(Direction direction)
+    public clearingExitManager GetExitManager2(Direction direction)
+    {
+        switch (direction)
+        {
+            case Direction.North: return clearingExitDown;
+            case Direction.South: return clearingExitUp;
+            case Direction.East: return clearingExitEast;
+            case Direction.West: return clearingExitWest;
+            default: return null;
+        }
+    }
+
+
+    public void SetExitActive(Direction direction, bool active)
+    {
+        switch (direction)
+        {
+            case Direction.North:
+                hasNorthExit = active;
+                if (clearingExitUp != null) clearingExitUp.gameObject.SetActive(active);
+                break;
+            case Direction.South:
+                hasSouthExit = active;
+                if (clearingExitDown != null) clearingExitDown.gameObject.SetActive(active);
+                break;
+            case Direction.East:
+                hasEastExit = active;
+                if (clearingExitEast != null) clearingExitEast.gameObject.SetActive(active);
+                break;
+            case Direction.West:
+                hasWestExit = active;
+                if (clearingExitWest != null) clearingExitWest.gameObject.SetActive(active);
+                break;
+        }
+    }
+
+    public bool GetExitState(Direction direction)
     {
         return direction switch
         {
-            Direction.North => clearingDestinationUp,
-            Direction.South => clearingDestinationDown,
-            Direction.East => clearingDestinationEast,
-            Direction.West => clearingDestinationWest,
-            _ => null
+            Direction.North => hasNorthExit,
+            Direction.South => hasSouthExit,
+            Direction.East => hasEastExit,
+            Direction.West => hasWestExit,
+            _ => false
         };
     }
 }
 
-public enum Direction
-{
-    North,
-    South,
-    East,
-    West
-}

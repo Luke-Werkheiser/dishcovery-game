@@ -31,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.94, y: -0.0000009536743, z: 6.2510233}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -150,4 +150,8 @@ MonoBehaviour:
   hasPickUp: 0
   foodHeight: 1
   foodInfo: {fileID: 0}
-  ingredients: 010000000600000006000000
+  ingredients: 0100000006000000
+  roomb: {fileID: 0}
+  index: 0
+  hasBeenPicked: 0
+  isBeingCarried: 0

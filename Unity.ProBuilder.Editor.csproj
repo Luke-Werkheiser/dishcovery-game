@@ -207,9 +207,9 @@
     <Compile Include="Library\PackageCache\com.unity.probuilder@5.2.4\Editor\MenuActions\Object\FlipObjectNormals.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@5.2.4\Editor\EditorCore\EditorSnapping.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@5.2.4\Editor\EditorCore\DestroyListener.cs" />
-    <Compile Include="Library\PackageCache\com.unity.probuilder@5.2.4\Editor\StateMachines\ShapeState.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@5.2.4\Editor\EditorCore\VertexPositionEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@5.2.4\Editor\EditorCore\PositionTool.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@5.2.4\Editor\StateMachines\ShapeState.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@5.2.4\Editor\MenuActions\Export\ExportAsset.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@5.2.4\Editor\EditorCore\EditShapeTool.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@5.2.4\Editor\EditorCore\MenuAction.cs" />

@@ -168,20 +168,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf0a59ca07b6c14ab6ac42fda1c455d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPoints: []
   hasNorthExit: 1
   hasSouthExit: 1
   hasWestExit: 1
   hasEastExit: 1
-  northExit: {fileID: 1634563509070844023}
-  southExit: {fileID: 3488636776645051836}
-  eastExit: {fileID: 29726257090861882}
-  westExit: {fileID: 1615363303108997184}
-  northRoom: {fileID: 0}
-  southRoom: {fileID: 0}
-  eastRoom: {fileID: 0}
-  westRoom: {fileID: 0}
-  gridPosition: {x: 0, y: 0}
+  clearingExitUp: {fileID: 1634563509070844023}
+  clearingExitDown: {fileID: 3488636776645051836}
+  clearingExitEast: {fileID: 29726257090861882}
+  clearingExitWest: {fileID: 1615363303108997184}
+  clearingDestinationUp: {fileID: 0}
+  clearingDestinationDown: {fileID: 0}
+  clearingDestinationEast: {fileID: 0}
+  clearingDestinationWest: {fileID: 0}
   playerIsInThisArea: 0
+  gridPosition: {x: 0, y: 0}
 --- !u!1 &1857049638477487722
 GameObject:
   m_ObjectHideFlags: 0

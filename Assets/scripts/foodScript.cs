@@ -14,7 +14,10 @@ public class foodScript : MonoBehaviour
     // Gizmo colors
     private Color heightIndicatorColor = Color.green;
     private const float gizmoSphereSize = 0.1f;
-
+    public RoomBehavior roomb;
+    public int index;
+    public bool hasBeenPicked;
+    public bool isBeingCarried;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +29,13 @@ public class foodScript : MonoBehaviour
     {
         
     }
-
+    public void pickupFood(){
+        if(!hasBeenPicked){
+            hasBeenPicked = true;
+            transform.parent = null;
+            roomb.startRespawnFood(index);
+        }
+    }
     public void createFoodItem(foodInfoObj foodInfo)
     {
         this.foodInfo = foodInfo;
@@ -66,6 +75,7 @@ public class foodScript : MonoBehaviour
             yield return null;
         }
         transform.SetParent(stackPoint);
+        pickupscript.instance.triggerUpdateStack();
     }
 
     // Draw Gizmos when selected in the editor
@@ -86,6 +96,6 @@ public class foodScript : MonoBehaviour
         Gizmos.DrawSphere(topPosition, gizmoSphereSize);
 
         // Draw the height value as text
-        UnityEditor.Handles.Label(topPosition + Vector3.up * 0.1f, $"Height: {foodHeight:F2}");
+        //UnityEditor.Handles.Label(topPosition + Vector3.up * 0.1f, $"Height: {foodHeight:F2}");
     }
 }

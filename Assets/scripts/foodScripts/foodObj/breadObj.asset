@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: breadObj
   m_EditorClassIdentifier: 
   foodItemHeight: 0
-  foodName: 
+  foodName: bread
   cheeseValue: 0
   meatValue: 0
   birdMeatValue: 0
@@ -29,3 +29,5 @@ MonoBehaviour:
   disassembleValue: 1
   ingredients: 06000000
   canBeDisassembled: 1
+  prop: {fileID: 0}
+  rarity: 10

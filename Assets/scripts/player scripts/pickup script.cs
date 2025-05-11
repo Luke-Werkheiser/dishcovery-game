@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class pickupscript : MonoBehaviour
 {
+    public static pickupscript instance {get; private set;}
     [Header("References")]
     public Transform holdPoint;
     public LayerMask foodLayer;
@@ -22,7 +23,7 @@ public class pickupscript : MonoBehaviour
     public float totalDistance;
     public int stackCount;
     public float moveTime = .5f;
-
+    public static event System.Action<List<foodScript>> OnInventoryChanged;
 
     public Vector3 launchDirection;
     public float launchForce;
@@ -31,7 +32,10 @@ public class pickupscript : MonoBehaviour
     {
         
     }
-
+    void Awake()
+    {
+        instance=this;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -68,6 +72,7 @@ public class pickupscript : MonoBehaviour
             Destroy(holderObjs[holderObjInt], .1f);
             totalDistance -= foodObjs[foodObjInt].GetComponent<foodScript>().foodHeight;
             foodObjs.RemoveAt(foodObjInt);
+            OnInventoryChanged?.Invoke(foodObjs.ConvertAll(f => f.GetComponent<foodScript>()));
 
         }
         if(Input.GetKeyDown(suckKey)){
@@ -83,6 +88,40 @@ public class pickupscript : MonoBehaviour
             }
 
         }
+    }
+    public void wipeStack()
+    {
+        // Clear all food objects from stack
+        foreach (GameObject foodObj in foodObjs)
+        {
+            if (foodObj != null)
+            {
+                foodObj.GetComponent<foodScript>().launchFoodObj(Vector3.down, 1f); // Gently drop items
+                foodObj.transform.SetParent(null);
+            }
+        }
+
+        // Destroy all holder objects
+        foreach (GameObject holder in holderObjs)
+        {
+            if (holder != null)
+            {
+                Destroy(holder);
+            }
+        }
+
+        // Clear lists
+        foodObjs.Clear();
+        holderObjs.Clear();
+        nearbyObjs.Clear();
+        targetedObj = null;
+        totalDistance = 0f;
+
+        // Update UI
+        triggerUpdateStack();
+    }
+    public void triggerUpdateStack(){
+        OnInventoryChanged?.Invoke(foodObjs.ConvertAll(f => f.GetComponent<foodScript>()));
     }
     private void OnTriggerExit(Collider other)
     {

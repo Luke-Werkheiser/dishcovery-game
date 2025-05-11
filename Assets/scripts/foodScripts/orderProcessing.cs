@@ -1,65 +1,50 @@
-using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
 public class orderProcessing : MonoBehaviour
 {
-    public foodInfoObj foodOrder;
-    public foodInfoObj.foodParts[][] ingridients; // Each array is a group of ingredients from a food item
+    public List<foodInfoObj> currentOrder = new List<foodInfoObj>(); // What the customer wants
+    public List<foodInfoObj.foodParts> submittedIngredients = new List<foodInfoObj.foodParts>(); // What player gave
     public bool useDisassembly = true;
     public Transform spawnPoint;
     public int lastScore;
-
-    public void fillOrder(List<foodInfoObj.foodParts[]> foodItems)
+    public static event System.Action<List<foodInfoObj>> OnOrderChanged;
+    // Call this to set up a new order (from OrderManager)
+    public void SetNewOrder(List<foodInfoObj> order)
     {
-        ingridients = foodItems.ToArray();
+        currentOrder = order;
+        OnOrderChanged?.Invoke(currentOrder);
+        foreach (var food in order)
+        {
+            if(food.prop != null) 
+                Instantiate(food.prop, spawnPoint.position + Vector3.up * food.foodItemHeight, Quaternion.identity);
+        }
+        Debug.Log($"New order received with {order.Count} items");
+    }
+
+    // Player submits their ingredients here
+    public void fillOrder(List<foodInfoObj.foodParts> playerIngredients)
+    {
+        submittedIngredients = playerIngredients;
         lastScore = EvaluateOrder();
         Debug.Log("Order Score: " + lastScore);
-        if(foodOrder.prop !=null) Instantiate(foodOrder.prop, spawnPoint.position, quaternion.identity);
+        OrderManager.Instance.AddCompletedOrder(lastScore);
     }
 
     private int EvaluateOrder()
     {
-        // Count required ingredients
-        Dictionary<foodInfoObj.foodParts, int> required = CountIngredients(foodOrder.ingredients);
-
-        // If disassembly is enabled, remove food items that contribute nothing
-        List<foodInfoObj.foodParts[]> filtered = new List<foodInfoObj.foodParts[]>();
-
-        foreach (var item in ingridients)
+        // Get all required ingredients from current order
+        List<foodInfoObj.foodParts> allRequired = new List<foodInfoObj.foodParts>();
+        foreach (var food in currentOrder)
         {
-            bool contributes = false;
-            foreach (var ing in item)
-            {
-                if (required.ContainsKey(ing))
-                {
-                    contributes = true;
-                    break;
-                }
-            }
-
-            if (contributes || !useDisassembly)
-            {
-                filtered.Add(item);
-            }
+            allRequired.AddRange(food.ingredients);
         }
 
-        // Count supplied ingredients
-        Dictionary<foodInfoObj.foodParts, int> supplied = new Dictionary<foodInfoObj.foodParts, int>();
+        Dictionary<foodInfoObj.foodParts, int> required = CountIngredients(allRequired.ToArray());
+        Dictionary<foodInfoObj.foodParts, int> supplied = CountIngredients(submittedIngredients.ToArray());
 
-        foreach (var item in filtered)
-        {
-            foreach (var ing in item)
-            {
-                if (!supplied.ContainsKey(ing))
-                    supplied[ing] = 0;
-
-                supplied[ing]++;
-            }
-        }
-
-        // Compare and log results
+        // Compare and calculate score
         int totalRequired = 0;
         int totalMatched = 0;
         int totalExtra = 0;
@@ -68,7 +53,7 @@ public class orderProcessing : MonoBehaviour
 
         foreach (var kvp in required)
         {
-            foodInfoObj.foodParts ingredient = kvp.Key;
+            var ingredient = kvp.Key;
             int needed = kvp.Value;
             totalRequired += needed;
 
@@ -76,57 +61,51 @@ public class orderProcessing : MonoBehaviour
 
             if (suppliedCount == needed)
             {
-                Debug.Log($"✅ Matched: {ingredient} x{needed}");
+                Debug.Log($"✅ Perfect: {ingredient} x{needed}");
                 totalMatched += needed;
             }
             else if (suppliedCount < needed)
             {
-                Debug.Log($"🔺 Too little: {ingredient} (Needed {needed}, Got {suppliedCount})");
+                Debug.Log($"⚠️ Missing: {ingredient} (Need {needed}, got {suppliedCount})");
                 totalMatched += suppliedCount;
             }
             else
             {
-                int matched = needed;
                 int extra = suppliedCount - needed;
-                Debug.Log($"✅ Matched: {ingredient} x{matched}");
-                Debug.Log($"❌ Too much: {ingredient} (+{extra})");
-                totalMatched += matched;
+                Debug.Log($"✅ Matched: {ingredient} x{needed}");
+                Debug.Log($"❌ Extra: {ingredient} (+{extra})");
+                totalMatched += needed;
                 totalExtra += extra;
             }
         }
 
+        // Check for unneeded ingredients
         foreach (var kvp in supplied)
         {
             if (!required.ContainsKey(kvp.Key))
             {
-                Debug.Log($"❌ Unneeded: {kvp.Key} x{kvp.Value}");
+                Debug.Log($"❌ Unwanted: {kvp.Key} x{kvp.Value}");
                 totalExtra += kvp.Value;
             }
         }
 
         Debug.Log("======================");
 
-        if (totalRequired == 0) return 1;
+        if (totalRequired == 0) return 0;
 
-        float matchRatio = (float)totalMatched / totalRequired;
-        int score = Mathf.RoundToInt(matchRatio * 10f);
-
-        score -= totalExtra;
-        return Mathf.Clamp(score, 1, 10);
+        float accuracy = (float)totalMatched / totalRequired;
+        int score = Mathf.RoundToInt(accuracy * 10f) - totalExtra;
+        return Mathf.Clamp(score, 0, 10);
     }
 
     private Dictionary<foodInfoObj.foodParts, int> CountIngredients(foodInfoObj.foodParts[] ingredients)
     {
         Dictionary<foodInfoObj.foodParts, int> count = new Dictionary<foodInfoObj.foodParts, int>();
-
         foreach (var ing in ingredients)
         {
-            if (!count.ContainsKey(ing))
-                count[ing] = 0;
-
-            count[ing]++;
+            if (count.ContainsKey(ing)) count[ing]++;
+            else count[ing] = 1;
         }
-
         return count;
     }
 }

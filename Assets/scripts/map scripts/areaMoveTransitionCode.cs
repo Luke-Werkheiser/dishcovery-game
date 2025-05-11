@@ -14,14 +14,20 @@ public class areaMoveTransitionCode : MonoBehaviour
     public cameraMover cm;
 
     public GameObject player;
+
+    public Material canGoMat, cantGoMat;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        if(AMTC != null) Destroy(this.gameObject);
+                if(AMTC != null) Destroy(this.gameObject);
         AMTC=this;
 
         cm.finishedMovingCamera.AddListener(finishTransition);
         pct.onTransitionComplete.AddListener(transitionIsFinished);
+
+    }
+    void Start()
+    {
     }
 
     // Update is called once per frame

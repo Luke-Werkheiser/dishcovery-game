@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: appleObj
   m_EditorClassIdentifier: 
   foodItemHeight: 0
-  foodName: 
+  foodName: apple
   cheeseValue: 0
   meatValue: 0
   birdMeatValue: 0
@@ -29,3 +29,5 @@ MonoBehaviour:
   disassembleValue: 1
   ingredients: 05000000
   canBeDisassembled: 1
+  prop: {fileID: 0}
+  rarity: 10

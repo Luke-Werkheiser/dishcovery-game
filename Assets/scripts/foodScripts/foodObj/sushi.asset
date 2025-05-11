@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: sushi
   m_EditorClassIdentifier: 
   foodItemHeight: 0
-  foodName: 
+  foodName: Sushi
   cheeseValue: 0
   meatValue: 0
   birdMeatValue: 0
@@ -29,3 +29,5 @@ MonoBehaviour:
   disassembleValue: 0
   ingredients: 100000000a000000
   canBeDisassembled: 1
+  prop: {fileID: 0}
+  rarity: 10

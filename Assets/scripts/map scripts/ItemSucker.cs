@@ -51,8 +51,15 @@ public class ItemSucker : MonoBehaviour
         yield return new WaitForSeconds(travelDuration);
 
         if (foodBits.Count > 0)
+
         {
-            orderDoer.fillOrder(foodBits);
+            List<foodInfoObj.foodParts> bits = new List<foodInfoObj.foodParts>();
+            foreach(foodInfoObj.foodParts[] parts in foodBits){
+                foreach(foodInfoObj.foodParts part in parts){
+                    bits.Add(part);
+                }
+            }
+            orderDoer.fillOrder(bits);
         }
 
         // Cleanup & Reset
@@ -63,6 +70,7 @@ public class ItemSucker : MonoBehaviour
                 Destroy(item);
             }
         }
+            pickupscript.instance.wipeStack();
 
         itemsToSuck.Clear();
         foodBits.Clear();

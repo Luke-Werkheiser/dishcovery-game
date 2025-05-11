@@ -58,7 +58,7 @@ public class foodInfoObj : ScriptableObject
 
     public GameObject prop;
 
-
+    public float rarity = 10f;
 
 
 

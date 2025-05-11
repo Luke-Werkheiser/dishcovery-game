@@ -17,6 +17,9 @@ public class clearingExitManager : MonoBehaviour
     /// y value - = down, + = up
     /// </summary>
     public Vector2 direction;
+
+    public MeshRenderer barrierMesh;
+    public GameObject doorWall;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +30,17 @@ public class clearingExitManager : MonoBehaviour
     void Update()
     {
         
+    }
+    public void setCanGo(bool canGo){
+        if(canGo){
+            barrierMesh.material = areaMoveTransitionCode.AMTC.canGoMat;
+            doorWall.SetActive(false);
+
+        }
+        else{
+            barrierMesh.material = areaMoveTransitionCode.AMTC.cantGoMat;
+
+        }
     }
     private void OnTriggerEnter(Collider other) {
                 if (( playerLayer & (1 << other.gameObject.layer)) != 0){

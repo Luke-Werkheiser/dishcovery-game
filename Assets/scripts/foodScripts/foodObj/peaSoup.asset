@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: peaSoup
   m_EditorClassIdentifier: 
   foodItemHeight: 0
-  foodName: 
+  foodName: Pea Soup
   cheeseValue: 0
   meatValue: 0
   birdMeatValue: 0
@@ -27,5 +27,7 @@ MonoBehaviour:
   vegitableValue: 0
   starchValue: 0
   disassembleValue: 0
-  ingredients: 0f000000030000000d00000014000000
+  ingredients: 0f00000014000000
   canBeDisassembled: 1
+  prop: {fileID: 0}
+  rarity: 10

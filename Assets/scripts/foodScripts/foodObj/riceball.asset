@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: riceball
   m_EditorClassIdentifier: 
   foodItemHeight: 0
-  foodName: 
+  foodName: Riceballs
   cheeseValue: 0
   meatValue: 0
   birdMeatValue: 0
@@ -29,3 +29,5 @@ MonoBehaviour:
   disassembleValue: 0
   ingredients: 0a000000
   canBeDisassembled: 1
+  prop: {fileID: 0}
+  rarity: 10
