@@ -22,6 +22,13 @@ public class CompassController : MonoBehaviour
     private Vector3 flattenedTargetPos;
     private Vector3 flattenedPlayerPos;
 
+    [Header("Target Objs")]
+    public GameObject truck;
+    public GameObject flag1;
+    public GameObject flag2;
+    public GameObject flag3;    
+    public GameObject flag4;
+
     private void Start()
     {
         compassSize = compassRect.sizeDelta;
@@ -33,6 +40,24 @@ public class CompassController : MonoBehaviour
 
     private void Update()
     {
+
+
+        if(Input.GetKeyDown(KeyCode.Alpha1)){
+            targetObject=truck.transform;
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha2)){
+            targetObject=flag1.transform;
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha3)){
+            targetObject=flag2.transform;
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha4)){
+            targetObject=flag3.transform;
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha5)){
+            targetObject=flag4.transform;
+        }
+
         if (player == null || targetObject == null) return;
 
         // Flatten positions to 2D plane (XZ to XY)

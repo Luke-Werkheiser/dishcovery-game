@@ -30,10 +30,12 @@ public class WorldMapGenerator : MonoBehaviour
     public int gridHeight = 10;
     public float roomSpacing = 10f;
     public int maxRooms = 20;
+    public Vector2 roomDimensions = new Vector2(32, 19);
 
     [Header("Base Room")]
     public GameObject baseRoom;
     public Vector2Int baseRoomGridPosition;
+    
     [Header("Debug")]
     public bool debugRegenerate = false;
     private bool previousDebugState = false;
@@ -41,6 +43,9 @@ public class WorldMapGenerator : MonoBehaviour
     private int roomCount = 1; // starts with base room
     private System.Random rng = new System.Random();
     public UnityEvent worldGenFinished;
+
+    public RoomAwareObject playerAwarness;
+    public RoomAwareObject flag1, flag2, flag3, flag4;
     void Awake()
     {
         gen=this;
@@ -49,7 +54,22 @@ public class WorldMapGenerator : MonoBehaviour
     {
         Invoke(nameof(GenerateWorldMap), .1f);
     }
+    public GameObject GetRoomAtPosition(Vector3 worldPosition)
+    {
+        Vector2Int gridPos = WorldToGridPosition(worldPosition);
+        if (placedRooms.TryGetValue(gridPos, out GameObject room))
+        {
+            return room;
+        }
+        return null;
+    }
 
+    public Vector2Int WorldToGridPosition(Vector3 worldPosition)
+    {
+        int x = Mathf.RoundToInt(worldPosition.x / roomSpacing);
+        int y = Mathf.RoundToInt(worldPosition.z / roomSpacing); // Using z for Unity's forward axis
+        return new Vector2Int(x, y);
+    }
     private void Update()
     {
         if (debugRegenerate && !previousDebugState)
@@ -59,6 +79,84 @@ public class WorldMapGenerator : MonoBehaviour
         }
 
         previousDebugState = debugRegenerate;
+
+
+        UpdatePlayerRoom();
+        UpdateFlagRoom(flag1, 1);
+        UpdateFlagRoom(flag2, 2);
+        UpdateFlagRoom(flag3, 3);
+        UpdateFlagRoom(flag4, 4);
+
+    }
+private RoomBehavior currentPlayerRoom;
+private RoomBehavior flag1room;
+private RoomBehavior flag2room;
+private RoomBehavior flag3room;
+private RoomBehavior flag4room;
+
+    public void UpdatePlayerRoom()
+    {
+        if (playerAwarness == null) return;
+        
+        // Get potential new room
+        GameObject roomObj = GetRoomAtPosition(playerAwarness.transform.position);
+        
+        // Skip if no change
+        if (roomObj != null && roomObj.GetComponent<RoomBehavior>() == currentPlayerRoom) 
+            return;
+
+        // Clear previous room's player flag
+        if (currentPlayerRoom != null)
+        {
+            currentPlayerRoom.leaveArea();
+        }
+
+        // Set new room
+        if (roomObj != null)
+        {
+            currentPlayerRoom = roomObj.GetComponent<RoomBehavior>();
+            currentPlayerRoom.playerEntersArea();
+        }
+        else
+        {
+            currentPlayerRoom = null;
+        }
+    }
+        public void UpdateFlagRoom(RoomAwareObject obj, int index)
+    {
+        RoomBehavior flagroomThing;
+        if (obj == null) return;
+        if(index==1) flagroomThing=flag1room;
+        else if(index==2) flagroomThing=flag2room;
+        else if(index==3) flagroomThing=flag3room;
+        else flagroomThing=flag4room;
+        // Get potential new room
+        GameObject roomObj = GetRoomAtPosition(obj.transform.position);
+        
+        // Skip if no change
+        if (roomObj != null && roomObj.GetComponent<RoomBehavior>() == flagroomThing) 
+            return;
+
+        // Clear previous room's player flag
+        if (flagroomThing != null)
+        {
+            flagroomThing.setFlagActive(index, false);
+        }
+
+        // Set new room
+        if (roomObj != null)
+        {
+            flagroomThing = roomObj.GetComponent<RoomBehavior>();
+            flagroomThing.setFlagActive(index, true);
+        }
+        else
+        {
+            flagroomThing = null;
+        }
+        if(index==1) flag1room=flagroomThing;
+        else if(index==2) flag2room=flagroomThing;
+        else if(index==3) flag3room=flagroomThing;
+        else flag4room=flagroomThing;
     }
 
     void RegenerateWorld()
@@ -106,6 +204,8 @@ rng = new System.Random();
 
         // After generation, ensure all adjacent rooms are connected
         ConnectAllRooms();
+                    MapManager.instance.GenerateMap(placedRooms);
+
         worldGenFinished.Invoke();
         Debug.Log($"Finished generating {roomCount} rooms.");
     }
@@ -152,6 +252,12 @@ rng = new System.Random();
         // Connect this new room with its origin
         RoomBehavior fromBehavior = placedRooms[fromPos].GetComponent<RoomBehavior>();
         fromBehavior.setClearingExitDestination(newBehavior, dirEnum);
+        if(dirEnum==Direction.North){
+            fromBehavior.doesHaveNorth=true;
+        }
+        if(dirEnum==Direction.South)fromBehavior.doesHaveSouth=true;
+        if(dirEnum==Direction.West)fromBehavior.doesHaveWest=true;
+        if(dirEnum==Direction.East) fromBehavior.doesHaveEast=true;
     }
 
     void ConnectAllRooms()

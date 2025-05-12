@@ -30,8 +30,33 @@ public foodItemSpawn foodItem;
     public Transform[] foodSpawnPoints;
 
     public float foodRespawnTime;
+    [Header("Player Info")]
+    public bool playerHasVisited = false;
+    public bool isBaseRoom = false;
+    public bool playerIsInArea = false;
+
+    public bool hasFlag1, hasFlag2, hasFlag3, hasFlag4;
+
+    [Header("Info")]
+    public bool doesHaveNorth;
+    public bool doesHaveSouth;
+    public bool doesHaveEast;
+    public bool doesHaveWest;
+
+
+    public void playerEntersArea(){
+        playerHasVisited=true;
+        playerIsInArea = true;
+    }
+    public void leaveArea(){
+        playerIsInArea=false;
+    }
     void Start()
     {
+        northExit.Scriptarea=this;
+        eastExit.Scriptarea=this;
+        southExit.Scriptarea=this;
+        westExit.Scriptarea=this;
     }
     private void OnDrawGizmos()
     {
@@ -55,15 +80,17 @@ public void setClearingExitDestination(RoomBehavior targetRoom, Direction direct
 
     clearingExitManager targetExit = targetRoom.getIncomingDirection(direction); // not opposite!
     clearingExitManager myExit = getExitDirection(direction);
+
     if(targetExit!=null)
     targetExit.setCanGo(true);
     myExit.setCanGo(true);
+    
     if (targetExit == null || myExit == null) return;
 
     myExit.connectedPoint = targetExit;
     targetExit.connectedPoint = myExit;
 
-    Debug.Log($"Connected {direction} exits between {name} and {targetRoom.name}");
+//    Debug.Log($"Connected {direction} exits between {name} and {targetRoom.name}");
 }    public clearingExitManager getExitDirection(Direction direction){
         return direction switch
         {
@@ -75,6 +102,28 @@ public void setClearingExitDestination(RoomBehavior targetRoom, Direction direct
         };
 
     }
+    public void setFlagActive(int index, bool isHere){
+        if(index == 1){
+            hasFlag1=isHere;
+        }
+        else if(index == 2){
+            hasFlag2=isHere;
+        }
+        else if(index==3) hasFlag3=isHere;
+        else hasFlag4=isHere;
+    }
+    public clearingExitManager getExitDestination(Direction direction){
+        return direction switch
+        {
+            Direction.North => northDesitation,
+            Direction.South => southDesitation,
+            Direction.East => eastDesitation,
+            Direction.West => westDesitation,
+            _ => null
+        };
+
+    }
+
     public clearingExitManager getIncomingDirection(Direction direction){
         return direction switch
         {

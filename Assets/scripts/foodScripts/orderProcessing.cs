@@ -95,7 +95,9 @@ public class orderProcessing : MonoBehaviour
 
         float accuracy = (float)totalMatched / totalRequired;
         int score = Mathf.RoundToInt(accuracy * 10f) - totalExtra;
-        return Mathf.Clamp(score, 0, 10);
+
+        ReviewPopUps.current.CreateDamagePopUp(Mathf.Clamp(score, 1, 10));
+        return Mathf.Clamp(score, 1, 10);
     }
 
     private Dictionary<foodInfoObj.foodParts, int> CountIngredients(foodInfoObj.foodParts[] ingredients)

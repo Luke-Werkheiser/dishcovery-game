@@ -67,7 +67,11 @@ public class ItemSucker : MonoBehaviour
         {
             if (item != null)
             {
+                if(item.GetComponent<foodScript>().instantRespawn==false)
                 Destroy(item);
+                else{
+                    item.GetComponent<foodScript>().triggerRespawn();
+                }
             }
         }
             pickupscript.instance.wipeStack();

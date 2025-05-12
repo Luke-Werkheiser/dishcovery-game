@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class foodScript : MonoBehaviour
 {
@@ -18,10 +19,14 @@ public class foodScript : MonoBehaviour
     public int index;
     public bool hasBeenPicked;
     public bool isBeingCarried;
+
+    public bool instantRespawn;
+
+    public Transform respawnPoint;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(foodHeight == 0) foodHeight=.5f;
     }
 
     // Update is called once per frame
@@ -33,6 +38,7 @@ public class foodScript : MonoBehaviour
         if(!hasBeenPicked){
             hasBeenPicked = true;
             transform.parent = null;
+            if(roomb!=null)
             roomb.startRespawnFood(index);
         }
     }
@@ -77,7 +83,20 @@ public class foodScript : MonoBehaviour
         transform.SetParent(stackPoint);
         pickupscript.instance.triggerUpdateStack();
     }
+    public void triggerRespawn(){
+                transform.SetParent(respawnPoint);
 
+        Invoke(nameof(doRespawn), 1f);
+    }
+    public void doRespawn(){
+                transform.position = respawnPoint.position;
+        transform.rotation=respawnPoint.rotation;
+                transform.SetParent(respawnPoint);
+
+        GetComponent<Collider>().isTrigger=false;
+        GetComponent<Rigidbody>().isKinematic=true;
+
+    }
     // Draw Gizmos when selected in the editor
     private void OnDrawGizmosSelected()
     {

@@ -20,6 +20,7 @@ public class clearingExitManager : MonoBehaviour
 
     public MeshRenderer barrierMesh;
     public GameObject doorWall;
+    public RoomBehavior Scriptarea;
     // Start is called before the first frame update
     void Start()
     {

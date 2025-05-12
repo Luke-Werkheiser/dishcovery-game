@@ -25,6 +25,27 @@ public class areaScript : MonoBehaviour
     public bool playerIsInThisArea;
     public Vector2Int gridPosition;
 
+    [Header("Player Info")]
+    public bool playerHasVisited = false;
+
+    public bool playerIsInArea = false;
+
+    [Header("Info")]
+    public bool doesHaveNorth = false;
+    public bool doesHaveSouth = false;
+    public bool doesHaveEast = false;
+    public bool doesHaveWest = false;
+
+    public void playerEntersArea(){
+        playerHasVisited=true;
+        playerIsInArea = true;
+    }
+    public void leaveArea(){
+        playerIsInArea=false;
+    }
+    void Start()
+    {
+    }
     public void setClearingDestination(clearingExitManager exitManager, clearingExitManager destination)
     {
         if (exitManager == clearingExitUp)
