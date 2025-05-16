@@ -6,9 +6,9 @@ public class OrderManager : MonoBehaviour
     public static OrderManager Instance { get; private set; }
 
     [SerializeField] private List<foodInfoObj> allFoodItems = new List<foodInfoObj>();
-    private float totalScore = 0f;
-    private int totalOrdersCompleted = 0;
-    public float AverageScore { get; private set; } = 0f;
+    private float totalScore = 10f;
+    private int totalOrdersCompleted = 1;
+    public float AverageScore = 10f;
 
     [Header("Order Size Settings")]
     [SerializeField] private int maxOrderSize = 5;

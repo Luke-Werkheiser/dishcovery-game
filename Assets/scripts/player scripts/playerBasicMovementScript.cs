@@ -77,7 +77,7 @@ public class playerBasicMovementScript : MonoBehaviour
     {
         // ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
-        if(!canMove) return;
+        if(!canMove || pauseMenuManager.instance.gameIsPaused) return;
         MyInput();
         SpeedControl();
         StateHandler();

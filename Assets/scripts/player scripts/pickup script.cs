@@ -20,6 +20,10 @@ public class pickupscript : MonoBehaviour
     public KeyCode launchKey = KeyCode.Q;
     public KeyCode suckKey = KeyCode.R;
 
+    public float pickUpCooldownTime =2f;
+    public float dropCooldownTime = 2f;
+    public float dropCooldownTimer;
+    public float pickupCoolDownTimer;
     public float totalDistance;
     public int stackCount;
     public float moveTime = .5f;
@@ -51,8 +55,9 @@ public class pickupscript : MonoBehaviour
             }
             targetedObj = tempHold;
         }
-        if(Input.GetKeyDown(pickupKey) && targetedObj!=null){
+        if(Input.GetKeyDown(pickupKey) && targetedObj!=null && dropCooldownTimer<Time.time){
             if(targetedObj.gameObject.GetComponent<foodScript>()){
+                pickupCoolDownTimer = Time.time+pickUpCooldownTime;
                 GameObject holder = new GameObject($"pos {stackCount+1}");
                 holder.transform.position =new Vector3(holdPoint.position.x, holdPoint.position.y + totalDistance, holdPoint.position.z);
                 holder.transform.SetParent(holdPoint);
@@ -64,9 +69,10 @@ public class pickupscript : MonoBehaviour
                 targetedObj=null;
             }
         }
-        if(Input.GetKeyDown(launchKey) && holderObjs.Count>0 && foodObjs.Count >0){
+        if(Input.GetKeyDown(launchKey) && holderObjs.Count>0 && foodObjs.Count >0 && Time.time > pickupCoolDownTimer){
             int foodObjInt = foodObjs.Count-1;
             int holderObjInt = holderObjs.Count-1;
+            dropCooldownTimer=Time.time+dropCooldownTime;
             foodObjs[foodObjInt].GetComponent<foodScript>().launchFoodObj(launchDirection, launchForce);
             foodObjs[foodObjInt].gameObject.transform.SetParent(null);
             Destroy(holderObjs[holderObjInt], .1f);

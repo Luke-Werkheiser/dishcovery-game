@@ -70,17 +70,23 @@ public class foodScript : MonoBehaviour
     {
         Vector3 startingPos = transform.position;
         Vector3 finalPos;
+        Quaternion startingRotation = transform.rotation;
+        Quaternion finalRotation;
         float elapsedTime = 0;
         
         while (elapsedTime < time)
         {
             if(stackPoint == null) break;
             finalPos = stackPoint.position;
+            finalRotation=stackPoint.rotation;
             transform.position = Vector3.Lerp(startingPos, finalPos, (elapsedTime / time));
+            transform.rotation=Quaternion.Lerp(startingRotation, finalRotation, (elapsedTime/time));
             elapsedTime += Time.deltaTime;
             yield return null;
         }
         transform.SetParent(stackPoint);
+        //transform.localPosition=Vector3.zero;
+        Debug.Log("made it");
         pickupscript.instance.triggerUpdateStack();
     }
     public void triggerRespawn(){

@@ -23,11 +23,12 @@ ScriptsOnlyBuild:
     - foodRandomizer
     - foodScript
     - orderProcessing
+    - pauseMenuManager
     - pickupscript
     - playerBasicMovementScript
+    - totalStarsManager
     Unity.ProBuilder.Editor.dll:
     - UnityEditor.ProBuilder.ProBuilderEditor
-    - UnityEditor.ProBuilder.ProBuilderShapeEditor
     Unity.ProBuilder.dll:
     - UnityEngine.ProBuilder.ProBuilderMesh
     - UnityEngine.ProBuilder.Shapes.ProBuilderShape
@@ -125,6 +126,7 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.GridLayoutGroup
@@ -205,6 +207,21 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.SpriteState
     - UnityEngine.UI.Toggle/ToggleEvent
   methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: pauseMenuManager
+    methodName: startQuit
+  - assembly: Assembly-CSharp
+    fullTypeName: pauseMenuManager
+    methodName: resumeGame
+  - assembly: Assembly-CSharp
+    fullTypeName: pauseMenuManager
+    methodName: stopQuitting
+  - assembly: Assembly-CSharp
+    fullTypeName: pauseMenuManager
+    methodName: reloadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: pauseMenuManager
+    methodName: quitGame
   - assembly: Unity.RenderPipelines.Core.Runtime
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerButton
     methodName: OnAction
@@ -284,181 +301,185 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1810}
-    - Class: 114
       Script: {instanceID: 1814}
-    - Class: 114
-      Script: {instanceID: 1816}
     - Class: 114
       Script: {instanceID: 1818}
     - Class: 114
       Script: {instanceID: 1820}
     - Class: 114
-      Script: {instanceID: 1826}
+      Script: {instanceID: 1822}
     - Class: 114
-      Script: {instanceID: 1834}
+      Script: {instanceID: 1824}
     - Class: 114
-      Script: {instanceID: 1894}
+      Script: {instanceID: 1830}
     - Class: 114
-      Script: {instanceID: 1932}
+      Script: {instanceID: 1838}
     - Class: 114
-      Script: {instanceID: 2080}
+      Script: {instanceID: 1898}
     - Class: 114
-      Script: {instanceID: 2660}
+      Script: {instanceID: 1936}
     - Class: 114
-      Script: {instanceID: 2736}
+      Script: {instanceID: 2048}
     - Class: 114
-      Script: {instanceID: 2814}
+      Script: {instanceID: 2086}
     - Class: 114
-      Script: {instanceID: 2914}
+      Script: {instanceID: 2666}
     - Class: 114
-      Script: {instanceID: 3052}
+      Script: {instanceID: 2742}
     - Class: 114
-      Script: {instanceID: 3176}
+      Script: {instanceID: 2820}
     - Class: 114
-      Script: {instanceID: 3518}
+      Script: {instanceID: 2920}
     - Class: 114
-      Script: {instanceID: 3618}
+      Script: {instanceID: 3058}
     - Class: 114
-      Script: {instanceID: 3686}
+      Script: {instanceID: 3182}
     - Class: 114
-      Script: {instanceID: 3844}
+      Script: {instanceID: 3296}
     - Class: 114
-      Script: {instanceID: 4154}
+      Script: {instanceID: 3526}
     - Class: 114
-      Script: {instanceID: 4462}
+      Script: {instanceID: 3626}
     - Class: 114
-      Script: {instanceID: 4568}
+      Script: {instanceID: 3694}
     - Class: 114
-      Script: {instanceID: 4604}
+      Script: {instanceID: 3854}
     - Class: 114
-      Script: {instanceID: 4706}
+      Script: {instanceID: 4164}
     - Class: 114
-      Script: {instanceID: 4786}
+      Script: {instanceID: 4378}
     - Class: 114
-      Script: {instanceID: 4788}
+      Script: {instanceID: 4474}
     - Class: 114
-      Script: {instanceID: 4838}
+      Script: {instanceID: 4580}
     - Class: 114
-      Script: {instanceID: 4936}
+      Script: {instanceID: 4616}
     - Class: 114
-      Script: {instanceID: 4998}
+      Script: {instanceID: 4718}
     - Class: 114
-      Script: {instanceID: 5106}
+      Script: {instanceID: 4798}
     - Class: 114
-      Script: {instanceID: 5564}
+      Script: {instanceID: 4800}
     - Class: 114
-      Script: {instanceID: 5716}
+      Script: {instanceID: 4850}
     - Class: 114
-      Script: {instanceID: 5750}
+      Script: {instanceID: 4948}
     - Class: 114
-      Script: {instanceID: 5908}
+      Script: {instanceID: 5010}
     - Class: 114
-      Script: {instanceID: 5954}
+      Script: {instanceID: 5118}
     - Class: 114
-      Script: {instanceID: 6172}
+      Script: {instanceID: 5576}
     - Class: 114
-      Script: {instanceID: 6300}
+      Script: {instanceID: 5728}
     - Class: 114
-      Script: {instanceID: 6314}
+      Script: {instanceID: 5762}
     - Class: 114
-      Script: {instanceID: 6544}
+      Script: {instanceID: 5920}
     - Class: 114
-      Script: {instanceID: 6764}
+      Script: {instanceID: 5966}
     - Class: 114
-      Script: {instanceID: 6918}
+      Script: {instanceID: 6188}
     - Class: 114
-      Script: {instanceID: 6944}
+      Script: {instanceID: 6220}
     - Class: 114
-      Script: {instanceID: 7128}
+      Script: {instanceID: 6318}
     - Class: 114
-      Script: {instanceID: 7214}
+      Script: {instanceID: 6332}
     - Class: 114
-      Script: {instanceID: 7284}
+      Script: {instanceID: 6562}
     - Class: 114
-      Script: {instanceID: 7298}
+      Script: {instanceID: 6782}
     - Class: 114
-      Script: {instanceID: 7408}
+      Script: {instanceID: 6936}
     - Class: 114
-      Script: {instanceID: 7420}
+      Script: {instanceID: 6962}
     - Class: 114
-      Script: {instanceID: 7432}
+      Script: {instanceID: 7146}
     - Class: 114
-      Script: {instanceID: 7506}
+      Script: {instanceID: 7232}
     - Class: 114
-      Script: {instanceID: 7516}
+      Script: {instanceID: 7302}
     - Class: 114
-      Script: {instanceID: 7806}
+      Script: {instanceID: 7316}
     - Class: 114
-      Script: {instanceID: 7810}
+      Script: {instanceID: 7426}
     - Class: 114
-      Script: {instanceID: 7836}
+      Script: {instanceID: 7438}
     - Class: 114
-      Script: {instanceID: 7942}
+      Script: {instanceID: 7450}
     - Class: 114
-      Script: {instanceID: 8254}
+      Script: {instanceID: 7524}
     - Class: 114
-      Script: {instanceID: 8410}
+      Script: {instanceID: 7534}
     - Class: 114
-      Script: {instanceID: 8670}
+      Script: {instanceID: 7824}
     - Class: 114
-      Script: {instanceID: 8686}
+      Script: {instanceID: 7828}
     - Class: 114
-      Script: {instanceID: 8758}
+      Script: {instanceID: 7854}
     - Class: 114
-      Script: {instanceID: 8790}
+      Script: {instanceID: 7960}
     - Class: 114
-      Script: {instanceID: 8796}
+      Script: {instanceID: 8272}
     - Class: 114
-      Script: {instanceID: 8968}
+      Script: {instanceID: 8428}
     - Class: 114
-      Script: {instanceID: 9022}
+      Script: {instanceID: 8648}
     - Class: 114
-      Script: {instanceID: 9100}
+      Script: {instanceID: 8690}
     - Class: 114
-      Script: {instanceID: 9208}
+      Script: {instanceID: 8706}
     - Class: 114
-      Script: {instanceID: 9226}
+      Script: {instanceID: 8742}
     - Class: 114
-      Script: {instanceID: 9388}
+      Script: {instanceID: 8780}
     - Class: 114
-      Script: {instanceID: 9424}
+      Script: {instanceID: 8812}
     - Class: 114
-      Script: {instanceID: 9604}
+      Script: {instanceID: 8818}
     - Class: 114
-      Script: {instanceID: 9792}
+      Script: {instanceID: 8992}
     - Class: 114
-      Script: {instanceID: 9856}
+      Script: {instanceID: 9046}
     - Class: 114
-      Script: {instanceID: 9892}
+      Script: {instanceID: 9124}
     - Class: 114
-      Script: {instanceID: 10346}
+      Script: {instanceID: 9232}
     - Class: 114
-      Script: {instanceID: 10396}
+      Script: {instanceID: 9250}
     - Class: 114
-      Script: {instanceID: 10842}
+      Script: {instanceID: 9412}
     - Class: 114
-      Script: {instanceID: 10846}
+      Script: {instanceID: 9448}
     - Class: 114
-      Script: {instanceID: 11386}
+      Script: {instanceID: 9620}
     - Class: 114
-      Script: {instanceID: 11478}
+      Script: {instanceID: 9632}
     - Class: 114
-      Script: {instanceID: 11614}
+      Script: {instanceID: 9820}
     - Class: 114
-      Script: {instanceID: 11800}
+      Script: {instanceID: 9884}
     - Class: 114
-      Script: {instanceID: 33098}
+      Script: {instanceID: 9920}
     - Class: 114
-      Script: {instanceID: 33106}
+      Script: {instanceID: 10374}
     - Class: 114
-      Script: {instanceID: 44406}
+      Script: {instanceID: 10424}
     - Class: 114
-      Script: {instanceID: 112438}
+      Script: {instanceID: 10870}
     - Class: 114
-      Script: {instanceID: 112446}
+      Script: {instanceID: 10874}
     - Class: 114
-      Script: {instanceID: 112464}
+      Script: {instanceID: 11416}
+    - Class: 114
+      Script: {instanceID: 11508}
+    - Class: 114
+      Script: {instanceID: 11644}
+    - Class: 114
+      Script: {instanceID: 11832}
+    - Class: 114
+      Script: {instanceID: 31756}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -558,6 +579,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnScrollbarValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: b68e2098b2f4a72937cfb899d0eef823
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PopUpAnimator
   - hash:
       serializedVersion: 2
       Hash: a3901985eb076c1c9b7562fca82ca3e0
@@ -734,6 +761,12 @@ ScriptsOnlyBuild:
     className: XRSystemData
   - hash:
       serializedVersion: 2
+      Hash: 4f1e67ca457bc23b2755d16eadfb9767
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ReviewPopUps
+  - hash:
+      serializedVersion: 2
       Hash: 37dbaff32a49c70ff37b8bb15bd24c18
     assemblyName: Unity.RenderPipelines.Core.Runtime
     namespaceName: UnityEngine.Rendering
@@ -884,7 +917,7 @@ ScriptsOnlyBuild:
     className: UnityOnDropdownValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 33f74cea57adf72e7e8df64f61181185
+      Hash: a8dbaf7bd57cf8abb7692e2088bf07fa
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: pickupscript
@@ -918,6 +951,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
     className: Benchmark04
+  - hash:
+      serializedVersion: 2
+      Hash: 9960977caa067f5511f3033b10bcf7c0
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: RoomAwareObject
   - hash:
       serializedVersion: 2
       Hash: d90629714fa6b0145fcaffc87f5c6559
@@ -1244,6 +1283,12 @@ ScriptsOnlyBuild:
     className: Bloom
   - hash:
       serializedVersion: 2
+      Hash: 9f3809ade9cb856ea296675f8218eb96
+    assemblyName: OEBIF
+    namespaceName: cakeslice
+    className: Rotate
+  - hash:
+      serializedVersion: 2
       Hash: 4ee1e5f285c826248e282a4df1635b19
     assemblyName: Unity.RenderPipelines.Universal.Runtime
     namespaceName: UnityEngine.Rendering.Universal
@@ -1254,6 +1299,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: DictionaryAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 2b6bf117ec9ed2565040a1a239f81454
+    assemblyName: OEBIF
+    namespaceName: cakeslice
+    className: OutlineAnimation
   - hash:
       serializedVersion: 2
       Hash: 3594d8e9fcbd74e51eec80efbf16c599
@@ -1278,6 +1329,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Core.Runtime
     namespaceName: UnityEngine.Rendering.UI
     className: DebugUIHandlerEnumHistory
+  - hash:
+      serializedVersion: 2
+      Hash: 8fe1bf4c6d35e576ce3b705ed6d5ab88
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: UIBuilder
   - hash:
       serializedVersion: 2
       Hash: 3013eba371c1ad47ba570299c4632a9e
@@ -1508,7 +1565,7 @@ ScriptsOnlyBuild:
     className: HorizontalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 3d086ffc21d4efefc42f4805dcca52b7
+      Hash: d684a73506b86945cd22cfe94bd5e60c
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerClearingTransition
@@ -1616,7 +1673,7 @@ ScriptsOnlyBuild:
     className: UnityOnDeselectMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 70b91ecc3e106dfa69ece53aec777983
+      Hash: fc7754b62a446661fb678734b9f57b2c
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: OrderManager
@@ -1682,6 +1739,12 @@ ScriptsOnlyBuild:
     className: AspectRatioFitter
   - hash:
       serializedVersion: 2
+      Hash: fd2da6f1428b3b0034dcc7f7aad9557a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MapManager
+  - hash:
+      serializedVersion: 2
       Hash: 8e867e9b6da8d6e002a3b7061e5f4ea2
     assemblyName: Assembly-CSharp
     namespaceName: 
@@ -1698,6 +1761,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TextMeshProUGUI
+  - hash:
+      serializedVersion: 2
+      Hash: bd2999afccaf8b0856e747d2c9e28b85
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MapRoomIcon
   - hash:
       serializedVersion: 2
       Hash: 47793fb73641da4999bd18d4dfce47c7
@@ -1722,6 +1791,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Universal.Runtime
     namespaceName: UnityEngine.Rendering.Universal
     className: LiftGammaGain
+  - hash:
+      serializedVersion: 2
+      Hash: 41f300b989908583a5122d045d57b6dc
+    assemblyName: OEBIF
+    namespaceName: cakeslice
+    className: Toggle
   - hash:
       serializedVersion: 2
       Hash: cde402e184a6ab530144506bc9d6a0af
@@ -1824,6 +1899,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: dc115dbdd542b035b8fe01fa2584d208
+    assemblyName: OEBIF
+    namespaceName: cakeslice
+    className: OutlineEffect
+  - hash:
+      serializedVersion: 2
+      Hash: 1855729ed862abc9635cc71a238067c7
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: totalStarsManager
   - hash:
       serializedVersion: 2
       Hash: 67ba98f8a8977f3e60e5f0e049923033
@@ -2060,6 +2147,12 @@ ScriptsOnlyBuild:
     className: FullScreenPassRendererFeature
   - hash:
       serializedVersion: 2
+      Hash: ac1a86d88ff0ed00017ad2f2b85ceabf
+    assemblyName: OEBIF
+    namespaceName: cakeslice
+    className: MaterialSwitcher
+  - hash:
+      serializedVersion: 2
       Hash: 01727a040aa965d7fae41c3c1e1d9ee5
     assemblyName: Unity.RenderPipelines.Universal.Runtime
     namespaceName: UnityEngine.Rendering.Universal
@@ -2156,6 +2249,12 @@ ScriptsOnlyBuild:
     className: Volume
   - hash:
       serializedVersion: 2
+      Hash: 93f703a13ce04d47640231b231dbb93b
+    assemblyName: OEBIF
+    namespaceName: cakeslice
+    className: Outline
+  - hash:
+      serializedVersion: 2
       Hash: 9fb1c3ab48b256d508ecddd967f98652
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
@@ -2210,77 +2309,11 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: fd2da6f1428b3b0034dcc7f7aad9557a
+      Hash: 25fd489c4b15f3d27efe7fc7d4423fd7
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: MapManager
-  - hash:
-      serializedVersion: 2
-      Hash: bd2999afccaf8b0856e747d2c9e28b85
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: MapRoomIcon
-  - hash:
-      serializedVersion: 2
-      Hash: 9960977caa067f5511f3033b10bcf7c0
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: RoomAwareObject
-  - hash:
-      serializedVersion: 2
-      Hash: dc115dbdd542b035b8fe01fa2584d208
-    assemblyName: OEBIF
-    namespaceName: cakeslice
-    className: OutlineEffect
-  - hash:
-      serializedVersion: 2
-      Hash: ac1a86d88ff0ed00017ad2f2b85ceabf
-    assemblyName: OEBIF
-    namespaceName: cakeslice
-    className: MaterialSwitcher
-  - hash:
-      serializedVersion: 2
-      Hash: 2b6bf117ec9ed2565040a1a239f81454
-    assemblyName: OEBIF
-    namespaceName: cakeslice
-    className: OutlineAnimation
-  - hash:
-      serializedVersion: 2
-      Hash: 41f300b989908583a5122d045d57b6dc
-    assemblyName: OEBIF
-    namespaceName: cakeslice
-    className: Toggle
-  - hash:
-      serializedVersion: 2
-      Hash: 93f703a13ce04d47640231b231dbb93b
-    assemblyName: OEBIF
-    namespaceName: cakeslice
-    className: Outline
-  - hash:
-      serializedVersion: 2
-      Hash: 9f3809ade9cb856ea296675f8218eb96
-    assemblyName: OEBIF
-    namespaceName: cakeslice
-    className: Rotate
-  - hash:
-      serializedVersion: 2
-      Hash: 4f1e67ca457bc23b2755d16eadfb9767
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: ReviewPopUps
-  - hash:
-      serializedVersion: 2
-      Hash: b68e2098b2f4a72937cfb899d0eef823
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: PopUpAnimator
-  - hash:
-      serializedVersion: 2
-      Hash: 8fe1bf4c6d35e576ce3b705ed6d5ab88
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: UIBuilder
+    className: pauseMenuManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/lukew/OneDrive/Documents/dishcoveryGameBuilds/dishcoveryBuild2/dishcovery.exe
+  playerPath: C:/Users/lukew/OneDrive/Documents/dishcoveryGameBuilds/dishcoveryBuild3/dishcovery.exe

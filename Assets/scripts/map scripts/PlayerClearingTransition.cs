@@ -21,7 +21,7 @@ public class PlayerClearingTransition : MonoBehaviour
     private clearingExitManager currentExitManager;
     private Vector3 currentMoveDir;
     private Vector3 currentLookDir;
-
+    public int attemptTimes = 500;
     public void StartTransition(Vector2 direction, clearingExitManager exitManager, Transform player)
     {
         if (transitionCoroutine != null)
@@ -53,7 +53,7 @@ public class PlayerClearingTransition : MonoBehaviour
     private System.Collections.IEnumerator TransitionRoutine()
     {
         waitingToContinue = true;
-
+        int attempts = 0;
         // Smoothly rotate player toward direction
         Quaternion targetRotation = Quaternion.LookRotation(currentLookDir);
         while (false && Quaternion.Angle(currentPlayer.rotation, targetRotation) > 0.5f)
@@ -63,7 +63,7 @@ public class PlayerClearingTransition : MonoBehaviour
         }
 
         // Accelerate until distanceBeforeDeceleration is reached
-        while (true)
+        while (attempts <attemptTimes)
         {
             float distanceFromOrigin = Vector3.Distance(new Vector3(currentPlayer.position.x, 0, currentPlayer.position.z),
                                                         new Vector3(currentExitManager.transform.position.x, 0, currentExitManager.transform.position.z));
@@ -78,8 +78,9 @@ public class PlayerClearingTransition : MonoBehaviour
                 // Stop movement and wait for ContinueMovement
                 break;
             }
-
-            yield return null;
+            attempts ++;
+            yield return new WaitForEndOfFrame();
+           // yield return null;
         }
 
         yield return new WaitUntil(() => !waitingToContinue);
