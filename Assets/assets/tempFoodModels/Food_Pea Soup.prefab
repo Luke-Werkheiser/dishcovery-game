@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6447459646861544557}
   - component: {fileID: 7877316127372031800}
   - component: {fileID: 2723404365866705767}
-  - component: {fileID: 883739415888233494}
   - component: {fileID: 8681885378446029875}
   - component: {fileID: 6583954909555847250}
+  - component: {fileID: 365045436324603578}
   m_Layer: 6
   m_Name: Food_Pea Soup
   m_TagString: Untagged
@@ -86,28 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &883739415888233494
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7309697184115626817}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2358759488825239399, guid: e28308bcdd7692b4d9a7fdccc3ac83ee, type: 3}
 --- !u!54 &8681885378446029875
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -157,3 +135,24 @@ MonoBehaviour:
   isBeingCarried: 0
   instantRespawn: 0
   respawnPoint: {fileID: 0}
+--- !u!65 &365045436324603578
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7309697184115626817}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.27378768, y: 0.14434066, z: 0.27378768}
+  m_Center: {x: -0.000000007450581, y: 0.07217032, z: -0.000000014901161}

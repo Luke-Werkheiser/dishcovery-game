@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7228484163179933883}
   - component: {fileID: 2211905054798909374}
   - component: {fileID: 9079099531186119239}
-  - component: {fileID: 2909941194322446676}
   - component: {fileID: 4801911481401315973}
   - component: {fileID: 4796499757896769842}
+  - component: {fileID: -180068706653186778}
   m_Layer: 6
   m_Name: Food_Empty Cup
   m_TagString: Untagged
@@ -86,28 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2909941194322446676
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6405119932854755652}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5069368629612433220, guid: e28308bcdd7692b4d9a7fdccc3ac83ee, type: 3}
 --- !u!54 &4801911481401315973
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -157,3 +135,24 @@ MonoBehaviour:
   isBeingCarried: 0
   instantRespawn: 0
   respawnPoint: {fileID: 0}
+--- !u!65 &-180068706653186778
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6405119932854755652}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.17834002, y: 0.20139623, z: 0.17833999}
+  m_Center: {x: 0.000000011175871, y: 0.10316117, z: 0.000000033527613}

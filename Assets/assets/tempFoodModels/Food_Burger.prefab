@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7442419676580567953}
   - component: {fileID: 1510453678919611886}
   - component: {fileID: 7245358080818895642}
-  - component: {fileID: 5821125682443764997}
   - component: {fileID: 8002286260040056196}
   - component: {fileID: 3901458769235861816}
+  - component: {fileID: 971959923494434039}
   m_Layer: 6
   m_Name: Food_Burger
   m_TagString: Untagged
@@ -86,28 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5821125682443764997
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4782450327965760052}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8944836183056611700, guid: e28308bcdd7692b4d9a7fdccc3ac83ee, type: 3}
 --- !u!54 &8002286260040056196
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -157,3 +135,24 @@ MonoBehaviour:
   isBeingCarried: 0
   instantRespawn: 0
   respawnPoint: {fileID: 0}
+--- !u!65 &971959923494434039
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4782450327965760052}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.19256887, y: 0.1542211, z: 0.20213589}
+  m_Center: {x: -0.0010664128, y: 0.07540146, z: 0.0026470236}

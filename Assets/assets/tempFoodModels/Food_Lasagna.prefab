@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8033286097508355643}
   - component: {fileID: 3506116678946171453}
   - component: {fileID: 2691672063655661565}
-  - component: {fileID: 7423290998529025098}
   - component: {fileID: 5182718076482944902}
   - component: {fileID: 6780465903181671789}
+  - component: {fileID: -4931001483192523646}
   m_Layer: 6
   m_Name: Food_Lasagna
   m_TagString: Untagged
@@ -86,28 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7423290998529025098
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6542322633717658384}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1323826315410768396, guid: e28308bcdd7692b4d9a7fdccc3ac83ee, type: 3}
 --- !u!54 &5182718076482944902
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -157,3 +135,24 @@ MonoBehaviour:
   isBeingCarried: 0
   instantRespawn: 0
   respawnPoint: {fileID: 0}
+--- !u!65 &-4931001483192523646
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6542322633717658384}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.26905328, y: 0.12244276, z: 0.26905328}
+  m_Center: {x: -0.0007947907, y: 0.061367232, z: -0.0026256666}

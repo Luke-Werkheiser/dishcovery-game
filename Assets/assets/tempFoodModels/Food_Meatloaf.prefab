@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1518168277112726854}
   - component: {fileID: 7068302650901073398}
   - component: {fileID: 2743094165181748237}
-  - component: {fileID: 5362697259880092344}
   - component: {fileID: 1174864502508020146}
   - component: {fileID: 8680216291386787806}
+  - component: {fileID: 1404070029200009053}
   m_Layer: 6
   m_Name: Food_Meatloaf
   m_TagString: Untagged
@@ -86,28 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5362697259880092344
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2908484336477562222}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6318242566799044280, guid: e28308bcdd7692b4d9a7fdccc3ac83ee, type: 3}
 --- !u!54 &1174864502508020146
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -157,3 +135,24 @@ MonoBehaviour:
   isBeingCarried: 0
   instantRespawn: 0
   respawnPoint: {fileID: 0}
+--- !u!65 &1404070029200009053
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2908484336477562222}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.36430246, y: 0.1292646, z: 0.23821539}
+  m_Center: {x: 0.027175836, y: 0.05262741, z: -0.00034190342}

@@ -1060,6 +1060,7 @@
     <ProjectReference Include="UnityEditor.TestRunner.csproj" />
     <ProjectReference Include="UnityEngine.TestRunner.csproj" />
     <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj" />
+    <ProjectReference Include="Unity.VisualEffectGraph.Runtime.csproj" />
     <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.csproj" />
     <ProjectReference Include="Unity.RenderPipelines.Universal.Runtime.csproj" />
     <ProjectReference Include="Unity.Burst.Editor.csproj" />
@@ -1085,6 +1086,7 @@
     <ProjectReference Include="Unity.RenderPipeline.Universal.ShaderLibrary.csproj" />
     <ProjectReference Include="Unity.Timeline.csproj" />
     <ProjectReference Include="Unity.ProBuilder.Editor.csproj" />
+    <ProjectReference Include="Unity.VisualEffectGraph.Editor.csproj" />
     <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj" />
     <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.csproj" />
     <ProjectReference Include="Unity.VisualScripting.State.Editor.csproj" />

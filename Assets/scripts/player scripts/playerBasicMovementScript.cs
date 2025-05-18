@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.VFX;
 public class playerBasicMovementScript : MonoBehaviour
 {
     [Header("Movement")]
@@ -44,6 +44,8 @@ public class playerBasicMovementScript : MonoBehaviour
     float horizontalInput;
     float verticalInput;
 
+    public Vector2 movementHolder;
+
     Vector3 moveDirection;
 
     Rigidbody rb;
@@ -60,6 +62,10 @@ public class playerBasicMovementScript : MonoBehaviour
 
         cantMove
     }
+
+    [Header("Effects")]
+    bool hasPlayedBurst;
+    public VisualEffect smokeBurst;
     [Header("External Control")]
 
    public bool canMove = true;
@@ -81,6 +87,9 @@ public class playerBasicMovementScript : MonoBehaviour
         MyInput();
         SpeedControl();
         StateHandler();
+        if(state!=MovementState.sprinting)
+        movementHolder = new Vector2(verticalInput/2, horizontalInput/2);
+        else        movementHolder = new Vector2(verticalInput, horizontalInput);
 
         // handle drag
         if (grounded)
@@ -121,6 +130,14 @@ public class playerBasicMovementScript : MonoBehaviour
         {
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
         }
+        if(Input.GetKeyDown(sprintKey)){
+            hasPlayedBurst=false;
+        }
+        if(!hasPlayedBurst && state==MovementState.sprinting && (horizontalInput!=0 || verticalInput!=0 || true)){
+            smokeBurst.Play();
+            hasPlayedBurst=true;
+        }
+
     }
 
     private void StateHandler()

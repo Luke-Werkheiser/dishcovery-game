@@ -1,8 +1,5 @@
 is_global = true
 build_property.RootNamespace = Packages
-build_property.ProjectDir = C:\dishcovery\dishcovery-game\
+build_property.ProjectDir = C:\dishcovery\dishcovery\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
-build_property.CsWinRTUseWindowsUIXamlProjections = false
-build_property.EffectiveAnalysisLevelStyle = 
-build_property.EnableCodeStyleSeverity = 
